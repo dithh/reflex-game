@@ -12,9 +12,14 @@
 <body>
     <div id="#game">
         <h1>Reflex Game</h1>
-        <p id="timer">Timer</p>
-
-        <button type="button" id="startGameButton">Start the game </button>
+        <div class="wrapper">
+            <span></span>
+            <span id="timer">Time left:</span>
+        </div>
+        <button id="startButton">Start the game </button>
+        <button id="resetButton">Reset the game</button>
+        <div class="board-wraper" id="game-board">
+        </div>
     </div>
     <script src="bundle.js"></script>
 </body>
