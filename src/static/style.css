@@ -1,0 +1,23 @@
+.board-wrapper{
+    display:flex;
+}
+.game-button{
+    width:30px;
+    height:30px;
+    border-style: solid;
+    margin:10px;
+}
+.game-button-active{
+    width:30px;
+    height:30px;
+    border-style: solid;
+    margin:10px;
+    background-color:green;
+}
+.game-display{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:1000px;
+}

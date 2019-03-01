@@ -1,6 +1,6 @@
 export class Game {
     lifesLeft: number;
-    maxLifes:number;
+    maxLifes: number;
     score: number;
     isOn: boolean;
 
