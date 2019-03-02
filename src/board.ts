@@ -1,3 +1,5 @@
+import { GameButton } from "./gameButton"
+
 export class Board {
     buttonsNumber: number;
     el: HTMLElement;
@@ -7,10 +9,7 @@ export class Board {
         this.el = document.querySelector(`#board`);
         this.buttonsNumber = buttonsNumber;
         for (let i = 1; i <= this.buttonsNumber; i++) {
-            let button = document.createElement("div");
-            button.className = "game-button";
-            button.id = `button-${i}`;
-            this.el.appendChild(button);
+            let button: GameButton = new GameButton(i);
         }
 
     }
@@ -38,7 +37,7 @@ export class Board {
     }
     resetButtons() {
         for (let i = 1; i <= this.buttonsNumber; i++) {
-            let button = document.querySelector(`#button-${i}`);
+            let button: HTMLElement = document.querySelector(`#button-${i}`);
             button.classList.remove("game-button-active")
         }
     }

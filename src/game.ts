@@ -16,7 +16,6 @@ export class Game {
         console.log("Game started");
     }
     resetGame(){
-        let resetGameEvent = new Event(`gameReset`)
         this.lifesLeft = this.maxLifes;
         this.isOn = false;
         this.score = 0;

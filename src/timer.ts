@@ -2,7 +2,7 @@ export class Timer {
     timeLeft: number;
     isOn: boolean;
     element: HTMLElement;
-    interval;
+    interval: number;
 
     constructor(timeLeft: number) {
         this.element = document.querySelector("#timer");
