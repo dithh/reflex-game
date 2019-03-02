@@ -11,20 +11,15 @@ export class Game {
         this.isOn = false; 
     }
 
-    startGame(el){
-        let startGameEvent = new Event(`gameStarted`);
-        el = el;
+    startGame(){
         this.isOn = true;
-        el.dispatchEvent(startGameEvent);
-        console.log("startGame Event dispatched");
+        console.log("Game started");
     }
-    resetGame(el){
+    resetGame(){
         let resetGameEvent = new Event(`gameReset`)
         this.lifesLeft = this.maxLifes;
         this.isOn = false;
         this.score = 0;
-        el = el;
-        el.dispatchEvent(resetGameEvent);
-        console.log("resetGame event dispatched")
+        console.log("Game reseted");
     }
 }

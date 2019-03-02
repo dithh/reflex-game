@@ -10,9 +10,13 @@ let startButton = document.querySelector("#startButton");
 let resetButton = document.querySelector(`#resetButton`);
 
 startButton.addEventListener("click", function(){
-    game.startGame(timer.element);
+    game.startGame();
+    board.selectActiveButton();
+    timer.startCountDown();
 })
 
 resetButton.addEventListener("click",(e)=>{
-    game.resetGame(timer.element);
+    game.resetGame();
+    timer.resetCountDown();
+    board.selectActiveButtonStop();
 })
