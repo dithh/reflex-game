@@ -26,7 +26,7 @@ export class Board {
                 button.classList.add(`game-button-active`);
                 this.btnArray[buttonId].isActive = true;
 
-            }, 2000)
+            }, 3000)
         }
     }
     selectActiveButtonStop() {
@@ -50,6 +50,7 @@ export class Board {
         }
         if(wasMissed){
             game.updateLifes(game.lifesLeft - 1);
+            alert('You lost a life!');
         }
     }
 }

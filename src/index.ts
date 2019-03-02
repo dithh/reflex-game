@@ -2,8 +2,8 @@ import { Timer } from "./timer";
 import { Game } from "./game";
 import { Board } from "./board";
 const MAX_LIFES: number = 3;
-const BUTTONS : number = 6;
-const GAME_DURATION : number = 20;
+const BUTTONS : number = 9;
+const GAME_DURATION : number = 60;
 
 const timer: Timer = new Timer(GAME_DURATION);
 const game: Game = new Game(MAX_LIFES);

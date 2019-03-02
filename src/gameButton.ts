@@ -23,7 +23,7 @@ export class GameButton {
         }
         else if (game.isOn){
           game.updateLifes(game.lifesLeft - 1);
-          console.log("ups");
+          alert("straciles zycie");
         }
       })
   }
