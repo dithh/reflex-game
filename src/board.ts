@@ -21,9 +21,9 @@ export class Board {
                 //     button.classList.remove("game-button-active")
                 // }
                 this.resetButtons();
-                let buttonId = Math.floor((Math.random() * this.buttonsNumber) + 1);
-                console.log(buttonId)
-                let button = document.querySelector(`#button-${buttonId}`)
+                const buttonId = Math.floor((Math.random() * this.buttonsNumber) + 1);
+                console.log(buttonId);
+                const button = document.querySelector(`#button-${buttonId}`);
                 button.classList.add(`game-button-active`);
 
             }, 2000)

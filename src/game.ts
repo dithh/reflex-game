@@ -4,18 +4,19 @@ export class Game {
     score: number;
     isOn: boolean;
 
-    constructor(maxLifes){
+    constructor(maxLifes) {
         this.maxLifes = maxLifes;
         this.lifesLeft = maxLifes;
         this.score = 0;
         this.isOn = false; 
     }
 
-    startGame(){
+    startGame() {
         this.isOn = true;
         console.log("Game started");
     }
-    resetGame(){
+
+    resetGame() {
         this.lifesLeft = this.maxLifes;
         this.isOn = false;
         this.score = 0;
