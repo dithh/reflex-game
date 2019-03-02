@@ -1,3 +1,5 @@
+import { getGame, getBoard } from "./index";
+
 export class GameButton {
   isActive: boolean;
   id:number;
@@ -11,5 +13,19 @@ export class GameButton {
       button.className = "game-button";
       button.id = `button-${id}`;
       this.el.appendChild(button);
+      button.addEventListener("click",()=>{
+        let game = getGame();
+        console.log(`button ${id} has been clicked`)
+        if(this.isActive && game.isOn){
+          game.updateScore(game.score +1);
+         this.isActive = false;
+         button.classList.remove(`game-button-active`);
+        }
+        else if (game.isOn){
+          game.updateLifes(game.lifesLeft - 1);
+          console.log("ups");
+        }
+      })
   }
+
 }

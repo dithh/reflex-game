@@ -2,8 +2,8 @@ import { Timer } from "./timer";
 import { Game } from "./game";
 import { Board } from "./board";
 const MAX_LIFES: number = 3;
-const BUTTONS : number = 5;
-const GAME_DURATION : number = 5;
+const BUTTONS : number = 6;
+const GAME_DURATION : number = 20;
 
 const timer: Timer = new Timer(GAME_DURATION);
 const game: Game = new Game(MAX_LIFES);
@@ -20,8 +20,8 @@ startButton.addEventListener("click",()=>{
 
 resetButton.addEventListener("click",()=>{
     game.resetGame();
-    timer.resetCountDown();
-    board.selectActiveButtonStop();
+   // timer.resetCountDown();
+   // board.selectActiveButtonStop();
 })
 
 export function getGame(){
@@ -29,4 +29,8 @@ export function getGame(){
 }
 export function getBoard(){
     return board;
+}
+
+export function getTimer(){
+    return timer;
 }
