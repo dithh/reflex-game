@@ -15,28 +15,31 @@ export class Board {
 
     }
     selectActiveButton() {
-        this.interval = setInterval(() => {
-            // for (let i = 1; i<=this.buttonsNumber; i++){
-            //     let button = document.querySelector(`#button-${i}`);
-            //     button.classList.remove("game-button-active")
-            // }
-            this.resetButtons();
-            let buttonId = Math.floor((Math.random() * this.buttonsNumber) + 1);
-            console.log(buttonId)
-            let button = document.querySelector(`#button-${buttonId}`)
-            button.classList.add(`game-button-active`);
+        if (!this.interval) {
+            this.interval = setInterval(() => {
+                // for (let i = 1; i<=this.buttonsNumber; i++){
+                //     let button = document.querySelector(`#button-${i}`);
+                //     button.classList.remove("game-button-active")
+                // }
+                this.resetButtons();
+                let buttonId = Math.floor((Math.random() * this.buttonsNumber) + 1);
+                console.log(buttonId)
+                let button = document.querySelector(`#button-${buttonId}`)
+                button.classList.add(`game-button-active`);
 
-        }, 2000)
-
+            }, 2000)
+        }
     }
-    selectActiveButtonStop(){
+    selectActiveButtonStop() {
         clearInterval(this.interval);
-        
+        this.resetButtons();
+        this.interval = null;
+
     }
- resetButtons(){
-    for (let i = 1; i<=this.buttonsNumber; i++){
-        let button = document.querySelector(`#button-${i}`);
-        button.classList.remove("game-button-active")
+    resetButtons() {
+        for (let i = 1; i <= this.buttonsNumber; i++) {
+            let button = document.querySelector(`#button-${i}`);
+            button.classList.remove("game-button-active")
+        }
     }
- }
 }

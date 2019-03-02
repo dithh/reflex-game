@@ -1,10 +1,13 @@
 import { Timer } from "./timer";
 import { Game } from "./game";
 import { Board } from "./board";
+const MAX_LIFES: number = 3;
+const BUTTONS : number = 5;
+const GAME_DURATION : number = 60;
 
-let timer: Timer = new Timer(10);
-let game: Game = new Game(3);
-let board: Board = new Board(6);
+let timer: Timer = new Timer(GAME_DURATION);
+let game: Game = new Game(MAX_LIFES);
+let board: Board = new Board(BUTTONS);
 
 let startButton = document.querySelector("#startButton");
 let resetButton = document.querySelector(`#resetButton`);
