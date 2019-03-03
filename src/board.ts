@@ -1,5 +1,6 @@
 import { GameButton } from "./gameButton"
 import { getGame } from "./index";
+import { Game } from "./game";
 export class Board {
     buttonsNumber: number;
     el: HTMLElement;
@@ -13,18 +14,19 @@ export class Board {
             let button: GameButton = new GameButton(i);
             this.btnArray.push(button);
         }
-        console.log(this.btnArray);
 
     }
     selectActiveButton() {
+        const game: Game = getGame()
         if (!this.interval) {
             this.interval = setInterval(() => {
                 this.resetButtons();
-                const buttonId = Math.floor((Math.random() * this.buttonsNumber));
-                console.log(buttonId);
-                const button = document.querySelector(`#button-${buttonId}`);
-                button.classList.add(`game-button-active`);
-                this.btnArray[buttonId].isActive = true;
+                if (game.isOn) {
+                    const buttonId = Math.floor((Math.random() * this.buttonsNumber));
+                    const button = document.querySelector(`#button-${buttonId}`);
+                    button.classList.add(`game-button-active`);
+                    this.btnArray[buttonId].isActive = true;}
+                
 
             }, 3000)
         }
@@ -41,10 +43,9 @@ export class Board {
         for (let i = 0; i < this.buttonsNumber; i++) {
             if(this.btnArray[i].isActive){
                 wasMissed = true;
-                console.log(`miss`);
             }
             const button: HTMLElement = document.querySelector(`#button-${i}`);
-            button.classList.remove("game-button-active");
+            button.classList.remove(`game-button-active`);
             this.btnArray[i].isActive = false;
             
         }

@@ -9,7 +9,7 @@ const entryFile = fs.existsSync('./src/index.ts') ? './src/index.ts' : './src/in
 
 module.exports = {
     entry: ['@babel/polyfill', entryFile],
-    devtool: "inline-source-map",
+    devtool: `inline-source-map`,
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, 'dist')
@@ -19,7 +19,7 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, `dist`),
         port: 9000,
         overlay: {
             warnings: false,
