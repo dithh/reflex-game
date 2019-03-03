@@ -50,7 +50,6 @@ export class Board {
         }
         if(wasMissed){
             game.updateLifes(game.lifesLeft - 1);
-            alert('You lost a life!');
         }
     }
 }

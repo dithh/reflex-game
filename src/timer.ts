@@ -1,4 +1,6 @@
 import { getGame, getBoard } from "./index";
+import { Game } from "./game";
+import { Board } from "./board";
 
 export class Timer {
     gameDuration:number;
@@ -27,8 +29,10 @@ export class Timer {
                     this.element.innerHTML = `Time left: ${String(this.timeLeft)}`;
                 }
                 else if (!this.timeLeft){
-                    getGame().resetGame();
-                    getBoard().selectActiveButtonStop();
+                    const game:Game = getGame();
+                    const board:Board = getBoard();
+                    game.resetGame();
+                    board.selectActiveButtonStop();
                     this.resetCountDown();
                     
                 }
