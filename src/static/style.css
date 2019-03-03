@@ -12,15 +12,44 @@
     background-color:green;
 }
 
+.game-information{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .board-wrapper{
     display:flex;
     flex-wrap: wrap;
     width:300px;
+    border:solid 0.5px;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    margin:10px;
 }
+
 
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    text-align: center;
+}
+button {
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.start-button {
+ background-color:green
+}
+.reset-button {
+    background-color:red;
 }
